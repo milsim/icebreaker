@@ -15,4 +15,9 @@ $pages = array(
 );
 $page = array_key_exists('page', $_REQUEST) && $_REQUEST['page'] && in_array($_REQUEST['page'], $pages) ? $_REQUEST['page'] : 'operation';
 
-require_once "assets/templates/$page.php";
+if ($page ==='logout') {
+	require_once "logout.php";
+}
+else {
+	require_once "assets/templates/$page.php";
+}

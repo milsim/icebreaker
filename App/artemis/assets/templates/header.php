@@ -28,7 +28,9 @@ header("Content-type:text/html;charset=utf-8;");
 </head>
 <body>
 <?php
-require_once 'assets/templates/loggedin.php';
-require_once 'assets/templates/menu.php';
+if (isset($page)) {
+    require_once 'assets/templates/loggedin.php';
+    require_once 'assets/templates/menu.php';
+}
 ?>
 <?php require_once 'assets/templates/footer.php'; ?>

@@ -10,7 +10,7 @@ require_once 'assets/templates/loggedin.php';
 require_once 'assets/templates/menu.php';
 ?>
 <br>
-<div class='box'>
+<div class="box main">
 <?php
 switch ($_GET['page']) {
 	case 'operation':

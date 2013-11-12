@@ -1,0 +1,861 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="/icebreaker/artemis/favicon.ico">
+  <meta http-equiv="cache-control" content="no-cache">
+  <title>ICEBREAKER - MilSim 8th-10th November 2013 @Rödjenäs</title>
+
+  <script type='text/javascript' src='http://code.jquery.com/jquery-git2.js'></script>
+
+
+  <style type='text/css'>
+    @import url(http://fonts.googleapis.com/css?family=Press+Start+2P|Squada+One);
+ html, body {
+    min-height: 100%;
+    background-color: #6B7780; /*#fc0*/
+    margin:0;
+    padding: 0;
+    color: #000;
+    font-family: sans-serif;
+}
+body {
+    background-image: url(img/grunge.png);
+    font-size: 125%;
+    background-position: top center;
+        background-attachment: fixed;
+}
+a {
+        color: #000;
+        text-decoration: none;
+}
+a[target="_blank"] {
+        text-decoration: underline;
+        border-bottom: 2px solid black;
+}
+input {
+    background: #000;
+    border: .125em solid #fc0;
+    color: #fc0;
+    font-family:'Press Start 2P', monospace;
+    font-size: 300%;
+    margin-bottom: 2em;
+    padding: .25em .1em .1em .25em;
+    text-align: center;
+}
+hr {
+    height: 19px;
+    border: 0;
+    margin: 0;
+    background-color: transparent;
+    background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, #000), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, #000), color-stop(.75, #000), color-stop(.75, transparent), to(transparent));
+    background-image: -webkit-linear-gradient(-45deg, #000 25%, transparent 25%, transparent 50%, #000 50%, 000 75%, transparent 75%, transparent);
+    background-image: -moz-linear-gradient(-45deg, #000 25%, transparent 25%, transparent 50%, #000 50%, #000 75%, transparent 75%, transparent);
+    background-image: -ms-linear-gradient(-45deg, #000 25%, transparent 25%, transparent 50%, #000 50%, #000 75%, transparent 75%, transparent);
+    background-image: -o-linear-gradient(-45deg, #000 25%, transparent 25%, transparent 50%, #000 50%, #000 75%, transparent 75%, transparent);
+    background-image: linear-gradient(-45deg, #000 25%, transparent 25%, transparent 50%, #000 50%, #000 75%, transparent 75%, transparent);
+    background-size: 50px 50px;
+    background-position: -25px -30px;
+    background-repeat: repeat-x;
+}
+hr.bottom {
+    border-bottom: .25em solid #000;
+    margin-bottom: 1em;
+    background-color: #fc0;
+}
+hr.top {
+    border-top: .25em solid #000;
+    margin-top: 1em;
+    background-color: #fc0;
+}
+.menu {
+    text-align:center;
+}
+ul {
+        list-style-type: decimal-leading-zero;
+}
+ul.block {
+    list-style: none;
+    color: #fc0;
+    font-weight: bold;
+    margin: 1em;
+}
+ul.block li {
+    border: .25em solid #6B7780;
+    background: #000;
+    padding: .5em;
+    list-style:none;
+    display:inline-block;
+    white-space: nowrap;
+    min-width: 200px;
+    height: 45px;
+    line-height: 45px;
+    margin: 0;
+
+}
+ul.block li a {
+        color: #fc0;
+}
+.bubble {
+    height: 15em;
+    width: 15em;
+    background: #fff;
+    border-radius: 100%;
+    box-shadow: 0 0 0 .5em #fc0 inset, 0 0 0 .5em #000;
+    margin: 1em auto;
+    display: block;
+}
+h1 {
+    text-transform: uppercase;
+    background: #fff;
+    border: .125em solid #000;
+    border-left: none;
+    border-right: none;
+    padding: .125em 2em;
+    text-align: right;
+    box-shadow: 1em 0 0 0 #fc0 inset, 1.125em 0 0 0 #000 inset;
+    font-family:'Press Start 2P', monospace;
+    color: #000;
+}
+h2 {
+    background: #000;
+    color: #fc0;
+    padding: .25em;
+    text-align: right;
+    font-family:'Squada One', sans-serif;
+    font-weight: normal;
+}
+h3 {
+    background: #000;
+    padding: .25em 1em;
+    margin-bottom: -.125em;
+    margin-left: 20%;
+    color: #fff;
+    font-family:'Press Start 2P', monospace;
+}
+.menu h3 {
+        text-align: left;
+}
+.box {
+    border: .25em solid #000;
+    background: #fc0;
+    margin: -.25em auto 1em;
+    padding: .25em .5em;
+    font-weight: bold;
+    color: #000;
+    max-width: 800px;
+}
+.nato {
+    background-color: #000;
+    background-image: url(img/nato.png);
+}
+.vdv {
+    background-image: url(img/vdv.png);
+}
+.abk {
+    background-image: url(img/abk.png);
+}
+.jhd {
+    background-color: #000;
+    background-image: url(img/jhd.png);
+}
+.nshq {
+    background-image: url(http://www.nshq.nato.int/default/includes/themes/nshq/assets/img/ui/logo2.png);
+}
+
+.page {
+  padding: 1em 0;
+    border: .25em solid #000;
+    border-left: none;
+    border-right: none;
+}
+.page.menu {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.page.rules {
+    background-image: url(img/rules.jpg);
+    background-position: center;
+    background-color: #000;
+}
+.page.signup {
+    background-image: url(img/signup.jpg);
+    background-position: top;
+    margin-top: 2em;
+    background-color: #000;
+}
+.page.signup .form {
+        background: #ababab;
+        padding: 0;
+}
+.page.signup .form iframe{
+        display: block;
+        width: 100%;
+        height: 2450px;
+}
+.page.background {
+    background-image: url(img/background.jpg);
+    background-color: #000;
+}
+.page.info {
+    background-image: url(img/info.jpg);
+    background-position: center;
+    background-color: #000;
+}
+.cover {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.error {
+        background-color: red;
+}
+.big {
+    text-align: center;
+    font-family:'Press Start 2P', monospace;
+    text-transform: uppercase;
+}
+.box b {
+        font-family: monospace;
+        font-weight: bolder;
+        font-size: 120%;
+}
+.box strong {
+        font-weight: bolder;
+        font-size: 120%;
+        text-transform: uppercase;
+}
+.resp pre {
+        white-space: pre-wrap;
+        text-align: left;
+}
+.box.center {
+        text-align: center;
+}
+.box.overflow {
+        overflow-x: auto;
+}
+.vsaf {
+        font-size: 50%;
+        font-weight: normal;
+        border: .2em solid black;
+        border-collapse: collapse;
+        width: 100%;
+        background-color: #fc0;
+        font-family: verdana;
+}
+.vsaf th {
+        background-color: #000;
+        color: #fc0;
+}
+.vsaf th, .vsaf td {
+        padding: .1em .25em;
+        border-right: .1em solid rgba(0,0,0,.25);
+}
+.vsaf tr:nth-child(even) {
+        background-color: rgba(255,255,255,.25);
+}
+.vsaf th:last-child, .vsaf td:last-child {
+        border-right: none;
+}
+.vsaf td:first-child {
+        background-color: #000;
+        color: #fc0;
+        text-align: right;
+}
+.vsaf td:nth-child(2) {
+        text-align: center;
+        font-weight: bold;
+}
+.vsaf tr {
+        border-top: .1em solid rgba(0,0,0,.25);
+}
+.vsaf tr:first-child {
+        border-top: none;
+}
+</style>
+    <meta name="viewport" content="width=device-width,initial-scale=0.7,maximum-scale=0.7,user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="no" />
+<style>
+  </style>
+
+
+
+<script type='text/javascript'>//<![CDATA[
+$(window).load(function(){
+$.fn.fitText = function (kompressor, options) {
+
+    // Setup options
+    var compressor = kompressor || 1,
+        settings = $.extend({
+            'minFontSize': Number.NEGATIVE_INFINITY,
+                'maxFontSize': Number.POSITIVE_INFINITY
+        }, options);
+
+    return this.each(function () {
+
+        // Store the object
+        var $this = $(this);
+
+        // Resizer() resizes items based on the object width divided by the compressor * 10
+        var resizer = function () {
+            $this.css('font-size', Math.max(Math.min($this.width() / (compressor * 10), parseFloat(settings.maxFontSize)), parseFloat(settings.minFontSize)));
+        };
+
+        // Call once to set.
+        resizer();
+
+        // Call on resize. Opera debounces their resize by default.
+        $(window).on('resize.fittext orientationchange.fittext', resizer);
+
+    });
+
+};
+
+$.fn.scrollTo = function (target, options, callback) {
+    if (typeof options == 'function' && arguments.length == 2) {
+        callback = options;
+        options = target;
+    }
+    var settings = $.extend({
+        scrollTarget: target,
+        offsetTop: 50,
+        duration: 500,
+        easing: 'swing'
+    }, options);
+    return this.each(function () {
+        var scrollPane = $(this);
+        var scrollTarget = (typeof settings.scrollTarget == "number") ? settings.scrollTarget : $(settings.scrollTarget);
+        var scrollY = (typeof scrollTarget == "number") ? scrollTarget : scrollTarget.offset().top - parseInt(settings.offsetTop);
+        scrollPane.animate({
+            scrollTop: scrollY
+        }, parseInt(settings.duration), settings.easing, function () {
+            if (typeof callback == 'function') {
+                callback.call(this);
+            }
+        });
+    });
+}
+
+function page() {
+    $('.page').css('min-height', $(window).height() + 'px');
+}
+
+$(window).resize(function () {
+    page();
+});
+
+$(".block li a:not(.link)").click(function (e) {
+	//e.preventDefault();
+    $("body,html").scrollTo($("." + $(this).attr("href").substr(1)), {
+        offsetTop: -5
+    });
+});
+
+page();
+$("h1").fitText(1.1, {
+    minFontSize: '25px',
+    maxFontSize: '100px'
+});
+$("h2").fitText(1.1, {
+    minFontSize: '20px',
+    maxFontSize: '75px'
+});
+
+$(".big").fitText(1.1, {
+    minFontSize: '25px',
+    maxFontSize: '100px'
+});
+
+$("input").keypress(function(event) {
+    if (event.which == 13) {
+        event.preventDefault();
+
+		var p = $(this).parent();
+		var out = $(".resp").length ? $(".resp") : $("<section/>", {class: "box resp"});
+		out.empty().removeClass("error");
+		var h = $("<h2/>");
+
+		$.post("backend.php",{pin:$("input[type=password]").val()})
+		.done(function(resp){
+			h.text("[ classified ]");
+			out.html(resp).prepend(h);
+		})
+		.fail(function(exception){
+			out.addClass("error");
+			out.append($("<h2/>").text("Access denied"));
+		})
+		.always(function(){
+			$("input[type=password]").val(null).blur();
+			if (!$(".resp").length) {
+				p.append(out);
+			}
+			if (!out.hasClass("error")) {
+				$("html, body").scrollTo(out);
+			}
+		});
+
+    }
+});
+
+});//]]>
+
+</script>
+
+
+</head>
+<body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-43983550-1', 'milsim.se');
+  ga('send', 'pageview');
+
+</script>
+	<section class="page menu">
+		<header>
+			<hr class="bottom" />
+			 <h1>ICEBREAKER</h1>
+		</header>
+
+		<ul class="block">
+			<li><a href="#info">Info</a></li>
+			<li><a href="#background">Back story</a></li>
+			<li><a href="#factions">Factions</a></li>
+			<li><a href="#rules">Rules</a></li>
+			<li><a href="#signup">Sign-up</a></li>
+			<li class="link"><a href="http://milsim.se" target="_blank">milsim.se</a></li>
+		</ul>
+
+		<h2>8th-10th November 2013 @Röjdenäs</h2>
+
+		<!--<h3>ACCESS</h3><input type="password" size="6" />-->
+	</section>
+
+	<hr />
+	<a name="info">
+	<section class="page cover info">
+		<h2>Information</h2>
+		<h3>When?</h3>
+		<p class="box">
+			8th-10th november 2013<br/>
+			Game start <em>1100</em> hours on Friday, game ends at <em>1200</em> hours on Sunday.<br/>
+			Debrief and get together at the lake with sauna and BBQ.<br/>
+		</p>
+
+		<h3>Where?</h3>
+		<p class="box link">
+			<a href="http://goo.gl/p2Hcn5" target="_blank">Rödjenäs, Småland</a>
+		</p>
+
+		<h3>What?</h3>
+		<p class="box">
+			<b>Icebreaker</b> is a return to the old school milsims we love, like PR and the early Pandion games, which means: small groups with a set of missions to perform. Lots of sneaking, recon, and continuous contact with your HQ for orders and reports. Missions are organic and our design goal is to leave room for completing missions without the use of force (if you’re good at what you do). Our style if Milsim is not about getting a lot of kills or fast-paced action, but on creating a sense of continuity, realism and importance in accomplishing missions.<br/>
+			You can’t “win” <b>Icebreaker</b>. Icebreaker is ingame 24/7, 100%. No sleeping in cars or offcamping.
+		</p>
+
+		<h3>Practical information</h3>
+		<section class="box">
+			<strong>Price:</strong> 500 SEK/person<br/>
+			We accept teams in groups of 3-15 (ie squads). Single players will have to find a team to attach to, we do not accept single players.<br/><br/>
+			<strong>What you or your team needs to bring to the game:</strong>
+			<ul>
+			<li>JITF: Some form of smartphone or laptop you can connect to the internet with - for checking orders, intel and positioning. We will release a test site before the game, so you can check compability.
+			<li>On request, your team needs to be able to field a DSLR camera (preferrably one with a good telezoom, for long range photography), that you can use photograph targets and objectives in the field. You also need some way of uploading these photos to the HQ (via your 3G-Laptop or some other method).
+			<li>Your own essentials; BBs, batteries, water, food, sleeping arrangements, etc. We do not provide a base, tents or similar.
+			<li>Every player must carry some form of watch, to be able to tell time (important for respawn).
+			<li>In order for your medic to be 100% effective your team needs to bring: Bandages, IV-bags, Syringes ("morphine", no needles) and Tourniquets. All of these things are optional, but some injury cards require some or all of these items, and unless you have them you'll have a casualty on your hands. Jamaat groups have a somewhat different view of medics, so just Bandages will do for them.</li>
+			</ul>
+		</section>
+
+		<h3>Organizers</h3>
+		<p class="box link">
+			<b>Icebreaker</b> is organized by <a href="http://milsim.se" target="_blank">MilSim.se</a>. Earlier games by us include <em>Angels vs Animals</em>, <em>Politics of Pressure</em>, <em>Fun to be had</em>, <em>God, Guns and Gasoline</em> and the <em>Urban Operations</em> series.
+		</p>
+
+		<h3>Forum</h3>
+		<p class="box link">
+			<a href="http://airsoftsverige.com/forum/viewforum.php?f=236" target="_blank">Airsoftsverige</a>
+		</p>
+
+		<h3>With Special Thanks To</h3>
+		<p class="box">
+			BBOperations & Kether for inspiration, Peter Berg for Rödjenäs, Sonny Hittersten for logistics, the PR and PP-games (Mats and Anton)
+		</p>
+
+	</section>
+
+	<hr class="bottom top"/>
+
+	<a name="background">
+	<section class="page cover background">
+		 <h2>Background story</h2>
+
+		<p class="box">
+			The northern parts of the republic of Georgia has, since the 2008 conflict with Russia, become a transit area for gun smugglers, human trafficking, heroin refining and political uprising. Areas still officially controlled by Georgia have become dangerous for georgian law enforcement, and the president have asked his allies in NATO for help taking care of the problem. Separatist groups in Abkhazia and South-Ossetia have been causing problems, but a new threat is quickly gaining momentum in the region: caucasian islamism, based out of Chechnya and Dagestan, loosely organized under the name “Jamaat al-Jihad al-Islami”.. These, mostly foreign, are building up their presence in northern Georgia and have already performed a number of attacks on both civilian and military installations.
+		</p>
+		<hr class="bottom top" />
+		<p class="box">
+			The NATO-led “peacekeeping” force, known as the Joint International Task Force (JITF), are on the ground in an effort to make sure the situation does not escalate further. The presence of these NATO troops close to the Russian border have left the Russians furious and very cautious, and are proving highly disruptive for both islamist groups and the separatist groups alike.
+		</p>
+	</section>
+	<hr />
+
+	<a name="factions">
+	<section class="fractions">
+		<h2>Factions</h1>
+		<p class="box">
+			For <b>Icebreaker</b>, you can choose to play either as a squad part of the Joint International Task Force or a mujahedin group of the Jamaat al-Jihad al-Islami.
+		</p>
+
+	<hr/>
+
+		<div class="bubble cover jhd"></div>
+	<h3>Jaamat</h3>
+		<p class="box">
+			The Jamaat al-Jihad al-Islami is a loosely based network of small militant groups operating in northern Georgia. These, mostly foreign groups - from Dagestan, Chechnya and as far away as Afghanistan, Pakistan and Saudia Arabia, although they also number local Georgian fighters. The goal of the Jamaat is to pave the way for an islamic presence in Georgia, and in the long run establish a base for attacking the hated Russian kufirs in the north. The Jamaat al-Jihad al-Islami  is well funded by interests in Saudia Arabia, but has not had much time yet to establish themselves in Georgia. Their fighters are a mix of veterans from other jihads and raw recruits.
+		</p>
+		<section class="box">
+			<strong>Gear:</strong> Mostly East-Bloc stuff, mixed with civilian gear. Veterans have better gear and clothing more suited to the terrain, while recruits often wear more traditional garb like Salwar Kameez, pakol hats etc. No helmets, only leaders or HVTs are allowed body armour (body armour need to weigh as the real deal). Only eastern europe weapons (this means AKs, SVDs, PKMs, shotguns, non-tactical sniper-rifles etc). Absolutely no tactical gear like red dot sights, RIS/RAS, rails, baseball caps or shemags etc.<br/><br/>
+			<strong>Additional equipment needed:</strong>
+			<ul>
+			<li>Laptop with working 3G-connection. Your faction as a whole needs one, not every single team.
+			<li>Mobile phone with enough juice to work the whole weekend (this is your primary communications with both off-game staff and your in-game superiors).
+			</ul>
+
+			<strong class="center link">[<a href="http://spetsnaz.su/gallery/index.php?/category/246" target="_blank">inspirational images</a>]</strong><br/><br/>
+		</section>
+
+		<hr class="bottom top" />
+
+		<div class="bubble cover nato"></div>
+	<h3>Joint International Task Force (JITF)</h3>
+		<p class="box">
+			The Joint International Task Force is commanded by US command, but employs troops from many NATO countries as well as a few troops attached from non-NATO countries such as Sweden, and is charged primarily with keeping the peace, supporting the Georgian Army and Police, and with counter terrorism duties.
+		</p>
+		<section class="box">
+			<strong>Gear:</strong> Current gear used by western forces. The whole team have to have a cohesive look (ie no mixed teams) and have a real world equivalent, helmet and body armours need to weigh as much as the real world equivalent, but can be fake. <br/><br/>
+			<strong>Additional equipment needed:</strong>
+			<ul>
+			<li>Smartphone or laptop to connect to the internet and log into the (web based) orders, intel and positioning system. Test suite will be released before the game, so you can check that it works for your system.
+			<li>Mobile phone with enough juice to work the whole weekend.
+			<li>VHF-radio. Frequencies to be informed about later (and you have to know how to change frequency/reprogram them before the game).
+			</ul>
+		</section>
+
+	</section>
+
+	<hr/>
+	<a name="rules">
+	<section class="page cover rules">
+		<h2>Rules</h2>
+
+	<section class="box error">
+		<hr/>
+		<strong>if you don't read rules, at least read this:</strong>
+		<ul>
+			<li><b>Icebreaker</b> is a milsim, not speedball.</li>
+			<li><b>Icebreaker</b> expects some LARPing on your part.</li>
+			<li>On <b>Icebreaker</b> NATO talks English, and Jamaat Swedish.</li>
+			<li><b>Icebreaker</b> uses special spawn rules.</li>
+			<li>Absolutely no reloading of magazines can be performed during combat.</li>
+			<li>You can get captured.</li>
+		</ul>
+		<hr/>
+	</section>
+
+	<h3>Milsim - not speedball</h3>
+	<p class="box">
+		<b>Icebreaker</b> is a milsim - not a big-game, not speedball. What that means is you can’t expect just fun action - there’s also a lot of recon, waiting, doing missions you might not want to do etc -  but most importantly it means making sure your opponents are having fun, even if that means you lose a fight or don’t “win”. That’s the mentality we’re looking for, players who want to give their opponents and their team members a memorable and fun experience.
+	</p>
+	<p class="box">
+		Defining that kind if milsim would take too long to do here, but basically: remember it doesn’t matter who “wins”, don’t bitch about stuff ingame, try to keep as professional as possible - other players will appreciate it, act as your unit and according to your ROE - not according to what would optimize your chances of winning, and don’t be afraid to larp a bit.
+	</p>
+
+	<h3>Language</h3>
+	<p class="box">
+		The primary language for NATO troops is <b>English</b>. Try to use it as much as possible, both on the comms and when talking to each other. It doesn’t matter how well you speak it, just that you do not speak Swedish.
+	</p>
+	<p class="box">
+		Jamaat will use <b>Swedish</b> to symbolize russian, arabic, georgian and any other languages spoken by their fighters.
+	</p>
+	<p class="box">
+		It is important to remember that even though you, as a player, may understand both english and swedish, your character does not (unless specified). That means that if you, as a US Army grunt, capturing a Jamaat fighter from Dagestan, you will only speak English to that player, and that player may or may not “understand” that language. If the Jamaat player speaks Swedish, you will not understand, and will have to bring in someone that speaks the language to interpret. If Jamaat are speaking english, it means they actually speak english, however badly.
+	</p>
+	<p class="box">
+		The exception to this rule is if something important, offgame, is happening, ie someone has injured themselves or needs offgame information. Signal this by saying “offgame” or similar.
+	</p>
+
+<!-- Velocities //-->
+<h3>Velocities</h3>
+        <section class="box overflow">
+                All rules regarding weapons are according to the VSAF-table.
+<table class="vsaf">
+<tbody>
+<tr>
+<th>
+Class</th> <th>Dist.</th> <th>Joule</th> <th>.20 fps</th> <th>.25 fsp</th> <th>.28 fsp</th> <th>.30 fsp</th> <th>.34 fsp</th> <th>.36 fsp</th> <th>.40 fsp</th> <th>.43 fsp</th><th>.45 fsp</th></tr>
+<tr>
+<td>CQB:</td><td>0m</td><td>0.99</td><td>328.0</td><td>293.4</td><td>277.2</td><td>267.7</td><td>251.6</td><td>243.3</td><td>230.8</td><td>223.1</td><td>218.7</td>
+</tr>
+<tr>
+<td>Auto A:</td><td>5m</td><td>1.34</td><td>380.0</td><td>339.9</td><td>321.2</td><td>310.3</td><td>291.4</td><td>283.1</td><td>268.5</td><td>259.2</td><td>253.3</td>
+</tr>
+<tr>
+<td>Auto B:</td><td>10m</td><td>1.75</td><td>435.0</td><td>389.1</td><td>367.6</td><td>355.2</td><td>333.6</td><td>323.5</td><td>306.9</td><td>296.7</td><td>290.0</td>
+</tr>
+<tr>
+<td>Semi:</td><td>20m</td><td>2.51</td><td>520.0</td><td>465.1</td><td>439.5</td><td>424.6</td><td>398.8</td><td>387.4</td><td>367.5</td><td>354.6</td><td>346.7</td>
+</tr>
+<tr>
+<td>Bolt A:</td><td>30m</td><td>3.34</td><td>600.0</td><td>536.3</td><td>507.1</td><td>489.9</td><td>460.2</td><td>446.9</td><td>424.0</td><td>409.2</td><td>400.0</td>
+</tr>
+<tr>
+<td>Bolt B:</td><td>40m</td><td>4.55</td><td>700.0</td><td>626.1</td><td>591.6</td><td>571.5</td><td>536.9</td><td>521.6</td><td>494.9</td><td>477.4</td><td>466.7</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<table class="vsaf">
+<tbody>
+<tr>
+<th>Class</th> <th>Dist.</th> <th>Joule</th> <th>.20 m/s</th> <th>.25 m/s</th> <th>.28 m/s</th> <th>.30 m/s</th> <th>.34 m/s</th><th>.36 m/s</th> <th>.40 m/s</th> <th>.43 m/s</th><th>.45 m/s</th>
+</tr>
+<tr>
+<td>CQB:</td><td>0m</td><td>0.99</td><td>100.0</td><td>89.4</td><td>84.5</td><td>81.6</td><td>76.7</td><td>74.2</td><td>70.4</td><td>68.0</td><td>66.6</td>
+</tr>
+<tr>
+<td>Auto A:</td><td>5m</td><td>1.34</td><td>115.8</td><td>103.6</td><td>97.9</td><td>94.6</td><td>88.8</td><td>86.3</td><td>81.9</td><td>79.0</td><td>77.2</td>
+</tr>
+<tr>
+<td>Auto B:</td><td>10m</td><td>1.75</td><td>132.6</td><td>118.6</td><td>112.1</td><td>108.3</td><td>101.7</td><td>98.6</td><td>93.5</td><td>90.4</td><td>88.4</td>
+</tr>
+<tr>
+<td>Semi:</td><td>20m</td><td>2.51</td><td>158.5</td><td>141.8</td><td>134.0</td><td>129.4</td><td>121.6</td><td>118.1</td><td>112.0</td><td>108.1</td><td>105.7</td>
+</tr>
+<tr>
+<td>Bolt A:</td><td>30m</td><td>3.34</td><td>182.9</td><td>163.6</td><td>154.6</td><td>149.3</td><td>140.3</td><td>136.2</td><td>129.2</td><td>124.7</td><td>121.9</td>
+</tr>
+<tr>
+<td>Bolt B:</td><td>40m</td><td>4.55</td><td>213.4</td><td>190.8</td><td>180.3</td><td>174.2</td><td>163.6</td><td>159.0</td><td>150.8</td><td>145.5</td><td>142.2</td>
+</tr>
+</tbody>
+</table>
+        </section>
+	<h3>Ammo limit</h3>
+	<p class="box">
+<b>Icebreaker</b> employs strict rules for limiting the amount of ammunition carried around. You can carry as many magazines as you can reasonably keep on you (ie in your mag pockets and backpack). Ammo is limited per magazine-type:<br>
+* Assault-rifle magazines, max 80 bbs/magazine<br>
+* RPK74-magazines, max 140 bbs/magazine<br>
+* RPK-drum, max 400 bbs/magazine<br>
+* Machinegun-cassettes, max 1000 bbs/magazine (mahine gunners can only carry two extra cassettes on their body)<br>
+* Semi-snipers, max 30 bbs/magazine<br>
+* Bolt-action rifles, max 10 bbs/magazine<br>
+
+	</p>
+	<p class="box">
+		Reloading is only done at safe locations or equipment stashes (ie your base, safe houses, OPs, Reassembly Points etc). Absolutely no reloading can be performed during combat. This rule is in place to make every shot count and to force teams to employ certain tactics, and to make combat a hit or miss thing. If you press on and run out of ammo you’ll have to fall back, regroup, rearm and attempt the mission again.
+	</p>
+	<h3>An example to clarify:</h3>
+	<p class="box">
+		<em>
+Team 1 gets ambushed along the road. A prolonged firefight ensues, and two players from Team 1 runs out of ammo. They call out 'Out of ammo!' and their commander orders the team to regroup at the RP, where the team reloads magazines. They now have to take another route through the ambush (reattempting the mission in some new way).
+		</em>
+<br><b>Another example:</b><br>
+<em>
+A small group of Jamaat fighters encounter a patrol and open up on them. Half of the team quickly run out of ammo, and retreat back to their RP. Here, they now have to wait for the rest of their team to arrive/fall back until they all can reload their magazines. If the rest of their team don't show up in a reasonable time, they assume they've been killed and reload anyway, and head out to resume their attack, but from another direction.
+</em>
+	</p>
+
+
+	<h3>Injuries</h3>
+	<p class="box">
+		We will use injury-cards, the cards will be delivered to each groups starting point. Each player takes one card (without looking at it) and carries it around. The medic for the team carries the rest of the cards. Once you get hit, go down as usual, check your injury card and act according to the instructions on the card. Unless your injury card states otherwise, a medic or one of your team mates must fulfill the requirements on the card within the specified timeframe, or you bleed out (meaning, go to respawn). Unless specified on the card, only medics can perform the medical procedures (procedures that team mates can perform will have the text “by team mate” or similar).
+	</p>
+	<p class="box">
+		Injury cards can have all kinds of effects, ranging from benign (bullet just grazed you and you’re up on your feet in a very short time) to really complicated medical procedures (requiring morphine, tourniquets, IVs, stretchers etc).
+	</p>
+	<p class="box">
+		If a medic gets to you before you bleed out, the medic can (if he has any cards left) take your used card and give you a new one.
+	</p>
+	<p class="box">
+		If you bleed out, your card is “used up” and you effectively have no injury card left, meaning that the next time you get hit you are incapacitated immediately, unable to receive medical help, and must go to respawn as soon as the fighting is over. Keep the card on you and give it to a medic as soon as you can. A medic can also replace your “used up” card at any time as long as the situation is safe - meaning, not during active combat.
+	</p>
+	<p class="box">
+		Injury cards display an EFFECT, which applies to you, unless there is any text in the BODY ARMOR or HELMET sections of the card, and you are wearing that kind of protection.
+	</p>
+	<p class="box">
+		<strong>If you are shot again, after going down, you are incapacitated and must respawn.</strong>
+	</p>
+	<p class="box">
+		Body-armour and helmets will give the wearer a higher chance of surviving, as will a well equipped medic. The rules will take into account the worth of a human life in the different factions.
+	</p>
+	<p class="box">
+		Should your injury card require medical procedures that the medic cannot supply (ie out of morphine injections or has no stretcher) the medic can keep you alive long enough for another medic to arrive by staying close to you at all times until another medic arrives. If not all procedures can be performed anyway, you return to respawn.
+	</p>
+
+
+	<h3>Respawn</h3>
+	<section class="box">
+		<br/>
+		<strong>After bleeding out respawn is carried out this way:</strong>
+As your team moves out on a mission, designate a Reassembly Point along the way. This is an agreed upon location to reassemble in the case of falling back, and for respawn (in case your RP is very close to an ongoing firefight, use an earlier RP further away). <br>
+For <b>Jaamat</b>: If you bleed out, return to this location and wait 30 minutes after the fight has ended until respawning. <br>
+For <b>JITF</b> If you bleed out, return to this location and wait 60 minutes after the fight has ended until respawning. <br>
+<br>
+A single player can never respawn alone at a Reassembly Point - you have to have at least one other team mate with you at the Reassembly Point (living or dead does not matter). In the case of two players at a Reassembly Point, respawn happens for both of them at the latest time (ie, if Player 1 arrived at the RP at 13:00 and Player 2 arrived at 13:05, both players respawn 13:35/14.05).
+	</section>
+
+
+	<h3>HVT kills</h3>
+	<p class="box">
+		Any High Value Target that is killed (ie officers, leaders, important characters etc) can respawn normally, but for all intents and purposes that character no longer exists. That means officers can no longer lead troops, important characters no longer have the information they had before etc. Losing a commanding officer, a leader or some other important figure should be felt. If you have a capture mission, watch your fire and remember this rule.
+	</p>
+
+	<h3>Walking wounded</h3>
+	<p class="box">
+		<b>Icebreaker</b> has walking wounded, ie players who have been shot and are incapacitated in some way, but are not dead/offgame. Your injury card might indicate that you are a walking wounded, and that means you can move (slowly, no running), talk etc, but cannot fight (no shooting). You can still assist your team mates by handing them magazines, keeping watch etc, but you cannot fight. Also, walking wounded require support to move - at least one other team member must help you move around.
+	</p>
+	<p class="box">
+		This also means the enemy might shoot you, realize you are walking wounded and not dead, and lead you away for interrogation.
+	</p>
+
+	<h3>Deathlamp & Deathrags</h3>
+	<p class="box">
+		<b>NOTE: We're not using deathrags for Icebreaker</b><br><br>
+For nighttime activities, we recommend carrying a red blinking LED light or similar, to be worn or waved around to signal that you are incapacitated, in case you bleed out. This is to minimize unnecessary fire at players going to respawn in the dark.
+	</p>
+
+	<h3>Dead men don’t talk</h3>
+	<p class="box">
+		At any time you’ve bled out, try to keep as low a profile as possible. Don’t walk around looking at stuff, don’t talk loudly, and try to keep as still and quiet as possible. Also - dead men can’t carry on information. If you bleed out, anything you see or hear until you’ve respawned is off-limits. Try to keep this in mind - you can’t call to your teammates and tell them where the enemy is, who shot you or where, and things like that. This rule is in place to reward tactics.
+	</p>
+
+	<h3>Capture</h3>
+	<p class="box">
+		If you get caught empty handed, or are wounded, or even surrender, you can be Captured. The enemy may search you (symbolically) - if you do carry anything of importance (this means important documents, maps, concealed weapons, props etc) you have to tell your captors unless they forget to search you. Once captured you can be arrested, brought for questioning or be processed. Being processed means taken to a Reassembly Point, and “sent on for processing” (let this take at least five minutes at the RP). Even Jamaat can “process” people, which symbolizes them being sent elsewhere in captivity.
+	</p>
+	<p class="box">
+		Any weapons or personal items you carry that you do not want to lose - tell your captors and you can keep them on you. Such items (such as concealed weapons etc) cannot be used however, until you are respawned.
+	</p>
+	<p class="box">
+		Captured personnel are assumed to be kept under watch, and bound - and as such you cannot “escape” from captivity even if you have the opportunity (you can however be freed if your captors are killed or driven away and someone can reach you).
+	</p>
+	<p class="box">
+		If, at any point, you get uncomfortable (physically or mentally) by being captured, signal this by saying “<b>CUT</b>”. This means you’ve had enough and don’t want to keep on going anymore. Players must then immediately stop what they are doing and release you. Everyone, captors and captive, must make sure everyone’s ok.
+	</p>
+	<section class="box">
+		<strong>Captivity ends when</strong><br/>
+		<ul>
+		<li>You are <b>released</b>, for some reason<br/>
+		<li>You are <b>processed</b><br/>
+		<li>You are <b>killed</b> (and JITF doesn’t do that, only the Jamaat)<br/>
+		<li>You decide you’ve had enough and say “<b>CUT</b>”<br/>
+		</ul>
+	</section>
+	<p class="box">
+		When captivity ends - return to your base or a friendly unit. Only then can you once again use your weapons and/or items.<br><br>
+		<b>MAX 1 HOUR OF CAPTIVITY - Longer than that just isn't fun for anyone.</b>
+	</p>
+
+	<h3>Vehicles</h3>
+	<p class="box">
+		There will be rules for vehicles in place. More about this at a later stage.
+	</p>
+
+	<h3>Pyrotechnics</h3>
+	<p class="box">
+		The use of grenades is encouraged (as long as we organizers authorize any you bring on your own). We will have lots of grenades on sale before the game and on-site. You do not have to call out "grenade" or similar before throwing, just make sure you know what you're throwing at and try to keep it safe and sane. <br><strong> NO GRENADES AT NIGHT!</strong>
+	</p>
+	<p class="box">
+		If you are within range of a grenade (around five meters) when it goes off, you’ve been hit, unless you are in hard cover (ie behind a rock, around a wall etc).
+	</p>
+	<p class="box">
+		For larger explosives (IEDs), use common sense. More detailed rules about IEDs and explosives versus vehicles will be added later.
+	</p>
+	<p class="box">
+		Any pyrotechnics needs to be cleared by us organizers before being brought ingame.
+	</p>
+
+	<h3>Attempting missions</h3>
+	<p class="box">
+		In the spirit of old PR games missions attempted by a squad or group (for example, storming a hill or holding a point) cannot be reattempted in the same way if you take substantial losses (like, for instance, losing 75% of your team) or if you fall back. If this happens to your team you either have to abandon the mission (some other allied team might however attempt the mission) or fall back, regroup and attempt the mission in some other way. That usually means you must attempt the mission from some other direction. This rule is in place to reward good tactics and create chokepoints.
+	</p>
+
+	<h3>An example to clarify:</h3>
+	<p class="box">
+		<em>Team 1 has been told to recon a hill and, if possible, hold it until Team 2 arrives. Team 1 approches the hill from the south but suddenly come under attack from an ambush at the base of the hill. A firefight ensues and Team 1 takes heavy losses.</em>
+	</p>
+	<p class="box">
+		<em>Team 1 falls back to their agreed upon Reassembly Point, wait for their teammates to respawn, and then decide to reattempt the mission in another way; splitting their team in two and approaching in pincer movement from the east and west.</em>
+	</p>
+
+	</section>
+
+	<h3>Vehicles</h3>
+	<p class="box">
+ To take out a vehicle you need a IED or RPG (both of them pyrotechnical)
+
+There is a 75% chance for most vehicles to get destroyed, some vehicles have better odds.<br>
+Destroyed vehicles will have a small pyrotechnical device go off on them<br>
+A small light will show that the driver have seen the shot, and tried to activate the device.<br>
+Destroyed vehicles can be repaired with a repair kit. That takes 30 minutes (hood needs to be popped and vehicle standing still).<br>
+If no repair kits are available, the vehicle can not be repaired and must be escorted (see below), or remain inoperable until a repair kit is brought and it’s repaired.<br>
+Destroyed vehicles can be escorted by another vehicle to the resupply area (with blinking lights), where they will respawn after an hour. This still requires a repair kit.<br>
+A vehicle without armour must stop if taking small arms fire. After dealing with the situation it cab move again (unless it was blown up).<br>
+We control the amount of IEDs, RPGs and vehicle-resources there are in play.<br>
+Ingame vehicles need to be marked with a flag (in-game nationality) or just a large red piece of cloth. At night there needs to be a red lamp on the roof. Non-blinking.<br>
+</ul>
+	</p>
+	<h3>Night time</h3>
+	<p class="box">
+30 minutes after last light. No snipers or semisnipers allowed. No handgrenades. (use better trigger control, use semi-fire if you can, know what you shooting at).
+	</p>
+
+	<h3>Camp</h3>
+<p class="box">No firing into tents, or out of tents. Leave important game-materials outside tents (if you fail to guard your stash, the enemy might take them). </p>
+
+	<h3>Radio</h3>
+	<p class="box">VHF is used solely by JITF. No listening in (they are supposed to be encrypted). Jaamat will mostly use PMR, but other channels might be used.</p>
+
+	<h3>Respawn times</h3>
+	<p class="box">For groups that have the whole group eliminated the respawn-time is increased to 2 (TWO) hours. That is if the whole group bleeds out or are eliminated.</p>
+
+	<h3>The stone bridge</h3>
+	<p class="box">To be allowed to drive a vehicle over Solgenån, the stone bridge, and a bridgehead on the other side first need to be secured by foot. That means stop vehicles at either end, let troops on foot search and secure the other end, then move vehicles over.</p>
+
+	<h3>Tarmac roads</h3>
+	<p class="box">Don’t do any fighting on tarmac, they are only for transport. You can cross these roads, but don’t fight there.</p>
+
+	<h3>Injury cards</h3>
+	<p class="box">The injury cards we're using can be found here, for familiarization (don't print these):<br><br>
+	<a href="https://drive.google.com/file/d/0Bw5qG5anZ2RZMElQNEdVOE9CcFU/edit?usp=sharing" target="_blank">Cards, sheet 1</a><br>
+	<a href="https://drive.google.com/file/d/0Bw5qG5anZ2RZd2dKM1o5SHJaUUk/edit?usp=sharing" target="_blank">Cards, sheet 2</a>
+	</p>
+	<hr />
+
+	<a name="signup">
+	<section class="page cover signup">
+		<h2>Sign-up</h2>
+		<p class="box link form" style="text-align: center; font-size: 200%">
+			<iframe src="https://docs.google.com/forms/d/1DdyGztw-b3R57u0yQZfPwk7Jc7fj2e4gi3LpCTk5iWI/viewform" frameborder="0"></iframe>
+		</p>
+		<hr class="bottom top"/>
+		<p class="box center">
+			<b>Icebreaker</b> is a work of fiction. All characters appearing in this work are fictitious. Any resemblance to real persons, living or dead, is purely coincidental.<br/>Make love, Not war. &#x262e;
+		</p>
+	</section>
+
+	<hr class="top" />
+
+</body>
+
+
+</html>

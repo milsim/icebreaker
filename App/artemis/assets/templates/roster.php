@@ -1,3 +1,5 @@
+<?php require_once 'assets/templates/header.php'; ?>
+<div id="main" role="main">
 <h1>AVAILABLE ASSETS</h1>
 <hr>
 <?php
@@ -28,3 +30,5 @@ JITFHUMINT - JITF Human Intelligence<br>
 JITFGEOINT - JITF Geographical Intelligence<br>
 JITFSIGINT - JITF Signals Intelligence<br>
 JITFCYBINT - JITF Cyber Intelligence<br>
+</div>
+<?php require_once 'assets/templates/footer.php'; ?>

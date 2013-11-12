@@ -1,3 +1,5 @@
+<?php require_once 'assets/templates/header.php'; ?>
+<div id="main" role="main">
 <h1>COMMS</h1>
 <?php
 if ($_POST) {
@@ -155,3 +157,6 @@ $x++;
 		</td>
 	</tr>
 </table>
+
+</div>
+<?php require_once 'assets/templates/footer.php'; ?>

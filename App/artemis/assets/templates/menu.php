@@ -6,7 +6,9 @@
 	<a href="?page=roster">Roster</a>
 	<a href="?page=files">Files</a>
 	<a href="?page=logout">Sign off</a>
-	<span class="logged_in_name"><?=$_SESSION["name"];?></span>
-	<img src="assets/img/nato.png" class="logo">
-	<div id="curtime"></div>
+
+	<div id="meta">
+        <div class="logged_in_name"><?=$_SESSION["name"];?></div>
+        <div id="curtime"></div>
+    </div>
 </div>

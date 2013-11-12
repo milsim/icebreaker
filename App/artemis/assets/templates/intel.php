@@ -1,3 +1,5 @@
+<?php require_once 'assets/templates/header.php'; ?>
+<div id="main" role="main">
 <h1>INTEL</h1>
 <hr>
 <?php
@@ -42,3 +44,5 @@ $x++;
 ?>
 </tbody>
 </table>
+</div>
+<?php require_once 'assets/templates/footer.php'; ?>

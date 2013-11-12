@@ -1,26 +1,41 @@
 body {
 	background-color:#2787c2;
-	background-image:url('../img/gradient.png');
-    font-family: "Share Tech Mono", Arial, Helvetica;
+	background-image:url('../img/gradient.png') repeat-x;
+    background-size: cover;
+    font-family: "Share Tech Mono", Arial, sans-serif;
 }
 .menu {
-	border:1px solid #1f5779;
-	background-color:#206590;
-	padding:5px;
-	font-family: "Share Tech Mono",Arial, Helvetica;
+	background:#022169 url('../img/nato.png') no-repeat 4px 4px;
+    background-size: 32px 32px;
+	padding: 0 10px 0 40px;
 	font-weight:bold;
 	text-transform:uppercase;
 	color:white;
 	font-size:23px;
-    /*position:relative;*/
+    min-height: 40px;
+    line-height: 40px;
 }
 .menu a {
-	text-decoration:none;
-	color:white;
+    display: block;
+    float: left;
+    height: 40px;
+    padding: 0 10px;
+	text-decoration: none;
+	color: #fff;
 }
 .menu a:hover {
-	background-color:white;
-	color: #206590;
+	background-color: #fff;
+	color: #022169;
+}
+#main {
+    width: 960px;
+    margin: 0 auto;
+}
+#main.wide {
+    width: 100%;
+}
+#main.high {
+    height: 100%;
 }
 .box {
 	border:1px solid white;
@@ -40,16 +55,18 @@ h1,h2,h3,h4,h5,h6,input {
 	height: 32px;
     float: right;
 }
-#curtime {
-    /*height:38px;*/
-	line-height:32px;
-	font-size:13px;
+#meta {
+    height: 40px;
+	line-height: 20px;
+	font-size: 13px;
 	font-weight: normal;
 	white-space: nowrap;
-    /*text-align: right;*/
-    /*position: absolute;*/
-    /*right: 40px;*/
+    text-align: right;
     float: right;
+}
+#meta > div {
+    height: 20px;
+    padding: 0px;
 }
 .login {
 	color:white;

@@ -9,6 +9,6 @@
 
 	<div id="meta">
         <div class="logged_in_name"><?=$_SESSION["name"];?></div>
-        <div id="curtime"></div>
+        <div id="curtime"><?=date('Y-m-d H:i:s');?></div>
     </div>
 </div>

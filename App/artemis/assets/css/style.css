@@ -14,6 +14,7 @@ body {
 	font-size:23px;
     min-height: 40px;
     line-height: 40px;
+    min-width: 960px;
 }
 .menu a {
     display: block;

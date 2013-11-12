@@ -16,7 +16,7 @@ body {
     line-height: 40px;
     min-width: 960px;
 }
-.menu a {
+.menu > a {
     display: block;
     float: left;
     height: 40px;
@@ -24,7 +24,9 @@ body {
 	text-decoration: none;
 	color: #fff;
 }
-.menu a:hover {
+.menu > a:hover,
+.menu > a:active,
+.menu > a.active {
 	background-color: #fff;
 	color: #022169;
 }

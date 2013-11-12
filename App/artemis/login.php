@@ -1,7 +1,7 @@
 <?php
-if (@$_POST['uid']) {
+if (@$_REQUEST['uid']) {
 	require_once 'db.php';
-	$sql = "SELECT * FROM users WHERE auth=\"".e($_POST['uid'])."\"";
+	$sql = "SELECT * FROM users WHERE auth=\"".e($_REQUEST['uid'])."\"";
 	$result = mysql_query($sql);
 	if (@mysql_num_rows($result)>0) {
 		session_start();

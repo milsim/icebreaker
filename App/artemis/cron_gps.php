@@ -1,4 +1,10 @@
 <?php
+/*
+ * This script fetches GPS coordinates from the GPS tracker service, 
+ * truncates the current coordinate database and set the new coordinates
+ * 
+ */
+
 set_time_limit(0);
 require_once 'db.php';
 

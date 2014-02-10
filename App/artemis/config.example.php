@@ -17,3 +17,6 @@ define('DB_HOST', '');
 
 // MySQL character encdoding
 define('DB_CHARSET', '');
+
+// The interval (in microseconds) before the system refreshes the map and notifications
+define("NOTIFY_INTERVAL", '45000');

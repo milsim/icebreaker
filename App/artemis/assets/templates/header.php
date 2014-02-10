@@ -10,6 +10,7 @@ header("Content-type:text/html;charset=utf-8;");
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="/icebreaker/artemis/favicon.ico">
     <title>ARTEMIS</title>
+    <script>var interval_timer = <?=ARTEMIS_NOTIFY_INTERVAL;?>;</script>
     <script type="text/javascript" src="assets/js/jquery.min.js"></script>
     <style type="text/css">@import url(assets/plupload/js/jquery.plupload.queue/css/jquery.plupload.queue.css);</style>
     <!-- Third party script for BrowserPlus runtime (Google Gears included in Gears runtime now) -->

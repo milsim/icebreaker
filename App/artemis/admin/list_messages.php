@@ -11,16 +11,21 @@
 require_once("../db.php");
 $sql = "SELECT messages.*,users.name AS mfrom FROM messages,users WHERE users.id=messages.from ORDER BY sent_date DESC";
 $res = mysql_query($sql);
+$x=0;
 while($row=mysql_fetch_assoc($res)) {
 ?>
-<tr>
+<tr style="background-color:#<?php if($x %2 == 0) { echo "fff"; } else { echo "ddd"; } ?>;">
 	<td><?=$row["sent_date"];?>
 	<td><?=$row["subject"];?></td>
 	<td><?php
 		$sql = "SELECT messages_recipients.*,users.name FROM messages_recipients,users WHERE message_id=".$row["id"]." AND users.id=messages_recipients.recipient_id ORDER BY users.name ASC";
 		$res2 = mysql_query($sql);
 		while($row2 = mysql_fetch_assoc($res2)) {
+			if($row2["read_date"] != null) {
+			echo "<b style=\"background-color:#99ff99;\">".$row2["name"]."</b>, ";
+			} else {
 			echo $row2["name"].", ";
+			}
 		}
 	?></td>
 	<td><?=$row["mfrom"];?></td>
@@ -28,6 +33,7 @@ while($row=mysql_fetch_assoc($res)) {
 	<td><a href="edit_message.php?id=<?=$row["id"];?>">Edit/view</a></td>
 </tr>
 <?php
+$x++;
 }
 ?>
 </table>

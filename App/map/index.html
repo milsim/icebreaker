@@ -1,0 +1,168 @@
+
+<!--
+    Document   : openlayers.html
+    Author     : Xavier Irias
+
+Copyright (c) 2010, East Bay Municipal Utility District
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
+
+* Redistributions of source code must retain the above copyright notice,
+this list of conditions and the following disclaimer.
+
+* Redistributions in binary form must reproduce the above copyright notice,
+this list of conditions and the following disclaimer in the documentation and/or
+other materials provided with the distribution.
+
+* Neither the name of the East Bay Municipal Utility District nor the names of its contributors
+may be used to endorse or promote products derived from this software
+without specific prior written permission.
+
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS
+OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR
+CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY,
+OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+-->
+
+<!DOCTYPE html>
+<html><head><title>ICEBREAKER</title>
+
+    <link rel="stylesheet" type="text/css" href="./include/default.css" >
+    
+    <script type="text/javascript" src="./script/stdlib.js"></script>
+    <script type="text/javascript" src="./script/map.js"></script>
+    <script type="text/javascript" src="./script/mapclient.js"></script>
+    
+    <script type="text/javascript" src="./script/genericmap.js"></script>
+    <script type="text/javascript" src="./script/open/OpenLayers.js"></script>
+    <script type="text/javascript" src="./script/open/utm.js"></script>
+    <script type="text/javascript" src="./script/open/usng.js"></script>
+    <script type="text/javascript" src="./script/open/open.js"></script>
+
+    <script type="text/javascript" src="./script/ib.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+
+    <style type="text/css">
+        html, body, .olTileImage {
+			background-color: #000;
+		}
+        #mapDiv{
+            height: 100%;
+            width: 100%;
+            position:absolute;
+            top:0;
+            left:0;
+            z-index: 0;
+        }
+		button, input, select {
+			color: inherit;
+			border: .2em solid #fff;
+			background-color: #2787c2;
+			font-family: inherit;
+			outline: none;
+		}
+		#controlDiv {
+			position: absolute;
+			clear: both;
+			bottom: 0;
+			right: 0;
+			z-index: 10000;
+			font-family: monospace;
+			font-size: small;
+			text-align: left;
+			padding: 1em;
+			background-color: rgba(39, 135, 194, 0.75);
+			color: #fff;
+			border: .15em solid #1f5779;
+			border-bottom: none;
+			border-right: none;
+		}
+        html, body {
+            height: 100%; width: 100%; margin: 0; padding: 0;
+        }
+        #graticuleDiv {
+        	display: none;	
+        }
+        .olPopup {
+			padding: .25em;
+			background-color: #206590;
+			color: #fff;
+			font-family: monospace;
+			border: .15em solid #1f5779;
+        }
+		#cbMapType { display:none; }
+    }
+    </style>
+  </head>
+     <body onload="askLocation()">
+            <!-- put your Bing key here to enable Bing maps -->
+            <input type="hidden" id="BingMapKey" value="">
+            <div id="mapDiv"></div>
+            <div id="controlDiv">
+                <div id="miscDiv">
+                    <div style="float:left;">
+                        <input id="txtLocation" type="text" title="Enter a USNG grid reference, UTM grid reference or lat-long">
+                        <button id="cmdFind" type="button">Locate</button>
+						<button id="scan">SCAN</button>
+                    </div>
+                    <div id="graticuleDiv" style="float:left;padding-left:1em;">
+                        Graticule:
+                        <select id="cbGraticule">
+                            <option selected="selected" value="">None</option>
+                            <option value="USNG" title="US National Grid">USNG</option>
+                        </select>
+                        </div>
+                    <div id="mapTypes">
+                        <select id="cbMapType"><option></option></select>
+                    </div>
+                    
+                </div>
+                <div id="sizeDiv" style="display:none; padding-top:0.5em;">
+                    <div id="forceDiv" style="float:left;">
+                        <input type="checkbox" id="chkForceDefaultSize" title="Use default size">
+                        <label for="chkForceDefaultSize">Force</label>
+                    </div>
+                    <div id="valueDiv" style="padding-left:1em; float:left; padding-right:1em;">
+                        <div id="radiusDiv" style="float:left; padding-left:1em;">
+                                <label for="Radius">Radius:</label>
+                                <input type="text" id="Radius" title="Radius in chosen units">
+                            </div>
+                            <div id="widthDiv" style="float:left; padding-left:1em;">
+                                <label for="Width">Width:</label>
+                                <input type="text" id="Width" title="Width in chosen units">
+                            </div>
+                            <div id="heightDiv" style="float:left; padding-left:1em;">
+                                <label for="Height">Height:</label>
+                                <input type="text" id="Height" title="Height in chosen units">
+                            </div>
+                    </div>
+                    <div id="unitsDiv" style="float:left;">
+                        <div id="divLinear">
+                            <div style="float:left;width:6em;text-align: right;">Linear units:</div>
+                            <div style="float:left;"><select style="width:10em;" id="cbLinearUnits"><option></option></select></div>
+                        </div>
+                        <div id="divAreal">
+                            <div style="float:left;width:6em; text-align: right;">Areal units:</div>
+                            <div style="float:left;"><select style="width:10em;" id="cbArealUnits"><option></option></select></div>
+                        </div>
+                    </div>
+                </div>
+                    
+                <div id="infoDiv" style="padding-top:0.5em; height:2em;">
+                </div>
+
+                <div id="statusDiv" style="clear:both; height:2em;">
+                </div>
+            </div>
+    </body>
+</html>

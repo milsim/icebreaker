@@ -1,0 +1,181 @@
+/* 
+    Document   : default_m.css  (default css for mobile)
+    Author     : Xavier Irias
+
+Copyright (c) 2010, East Bay Municipal Utility District
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
+
+* Redistributions of source code must retain the above copyright notice,
+this list of conditions and the following disclaimer.
+
+* Redistributions in binary form must reproduce the above copyright notice,
+this list of conditions and the following disclaimer in the documentation and/or
+other materials provided with the distribution.
+
+* Neither the name of the East Bay Municipal Utility District nor the names of its contributors
+may be used to endorse or promote products derived from this software
+without specific prior written permission.
+
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS
+OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR
+CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY,
+OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+*/
+
+root { 
+    display: block;
+} 
+html {
+    min-height:100%;
+    background-color:silver; /* match body */
+    font-family: arial,helvetica,clean,sans-serif;
+}
+
+body {
+    background-color: silver;
+    width:100%;
+    margin-left: 0px;
+    margin-right:0px;
+    margin-top:0px;
+    margin-bottom:0px;
+    padding:0;
+    min-height:100%;
+}
+
+.indexlinks {
+    list-style-type:none;
+    line-height: 2em;
+    font-size:large;
+    padding-left: 0;
+}
+.currentMenu {
+    background-color:silver;
+}
+.pageTitle {
+    font-size:large;
+    font-weight:bold;
+}
+.pageBody {
+    clear:both;
+    font-size:medium;
+    font-family: Tahoma;
+    min-height:100%;
+}
+.errortitle {
+    color:red;
+}
+.required {
+    color: blue;
+    font-weight: bold;
+}
+.header {
+    clear:both; 
+    font-size: large; 
+    background-color: #ccccff; 
+    font-weight:bold; 
+    text-align:left; 
+    margin-left:auto; 
+    margin-right:auto;
+    width:90%;
+}
+.bodyContent {
+    padding-left:0px;
+    padding-top:1em;
+    width:90%;
+    min-height:50em; 
+    /* height:50em; */
+    background-color:white;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:left;
+    padding-bottom:1em;
+}
+.paddedContent {
+    padding-left:1em;
+    padding-right:1em;
+    padding-top: 1em;
+    padding-bottom:1em;
+    min-height:80%;
+    background-color:white;
+    /* height:45em; */
+    
+}
+.footer {
+    margin-left:auto;
+    margin-right:auto;
+    width:90%;
+    clear:both;
+}
+
+.auditInfo {
+    clear:both;
+    width:100%;
+    font-size:smaller;
+    padding-top:1em;
+}
+  
+.wrap {
+    clear:both;
+    text-align:left;
+}
+.leftCol {
+    display: block;  /* block float the labels to left column, set a width */
+    float: left;
+    width: 10em;
+    padding: 0;
+    margin:0; /* set top margin same as form input - textarea etc. elements */
+    text-align: right;
+    padding-top:0.5em;
+    padding-right:.5em;
+}
+.rightCol {
+    margin:0;
+    padding-top:0.5em;
+    float: left;
+}
+form input[readonly]{
+    background-color: beige;
+}
+form textarea[readonly]{
+    background-color: beige;
+}
+input[readonly]{
+    background-color: beige;
+}
+textarea[readonly]{
+    background-color: beige;
+}
+table.data {
+    background-color:  #eeeeee;
+    border-width: 1px;
+    border: solid  darkgray;
+    border-collapse: collapse;
+}
+tr.data {
+    border: solid slategrey;
+    border-width: 1px;
+    background-color:#EDF5FF;  /* light blue */
+}
+th.data {
+    padding: 1em;
+    background-color:  skyblue;
+}
+td.data {
+    border: solid slategrey;
+    padding: 0.5em;
+}
+
+#homeLink.hover.after {
+    content: attr(title);
+}

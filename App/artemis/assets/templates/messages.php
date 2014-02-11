@@ -15,10 +15,10 @@ if ($_POST) {
         echo "Message sent.<br /><br />";
 }
 ?>
-<?php if ($_GET["action"] != "send") { ?>[<a href="?page=messages&action=send">SEND MESSAGE</a>]<?php } ?>
+<?php if (isset($_GET["action"]) && $_GET["action"] != "send") { ?>[<a href="?page=messages&action=send">SEND MESSAGE</a>]<?php } ?>
 <hr>
 <?php
-if ($_GET["action"]=="send") {
+if (isset($_GET["action"]) && $_GET["action"]=="send") {
 ?>
 <form method="post" action="?page=messages">
 <table>

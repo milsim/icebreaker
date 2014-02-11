@@ -1,4 +1,6 @@
-<?php require_once 'assets/templates/header.php'; ?>
+<?php 
+session_start();
+require_once 'assets/templates/header.php'; ?>
 <?php
 require_once 'db.php';
 header("Content-type:text/html;charset=utf-8;");

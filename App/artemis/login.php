@@ -7,6 +7,7 @@ if (@$_REQUEST['uid']) {
 		session_start();
 		$_SESSION['uid'] = @mysql_result($result, 0, 'id');
 		$_SESSION['name'] = @mysql_result($result, 0, 'name');
+		$_SESSION['admin'] = (int)mysql_result($result,0,'admin');
 		setcookie('uid',@mysql_result($result, 0, 'id'), time()+3600*48);
 
 		if (strtoupper($_POST['uid'])=="DEMO") {

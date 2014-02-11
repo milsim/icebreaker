@@ -3,6 +3,11 @@
 <h1>INTEL</h1>
 <hr>
 <?php
+if($_SESSION["admin"]==1) {
+?>
+[ <a href="admin/create_intel.php">CREATE INTEL</a>]<br>
+<?php
+}
 if (@$_GET["id"]) {
 $sql = "SELECT * FROM intel WHERE sent=1 AND id=".(int)$_GET["id"];
 $res = mysql_query($sql);

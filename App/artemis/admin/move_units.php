@@ -55,14 +55,14 @@ while($row=mysql_fetch_assoc($res)) {
 ?>
 <tr>
 	<td><b><?=$row["name"];?></b></td>
-	<td><a href="move_units.php?id=<?=$row["gps_id"];?>&move=N">N</a></td>
-	<td><a href="move_units.php?id=<?=$row["gps_id"];?>&move=NE">NE</a></td>
-	<td><a href="move_units.php?id=<?=$row["gps_id"];?>&move=E">E</a></td>
-	<td><a href="move_units.php?id=<?=$row["gps_id"];?>&move=SE">SE</a></td>
-	<td><a href="move_units.php?id=<?=$row["gps_id"];?>&move=S">S</a></td>
-	<td><a href="move_units.php?id=<?=$row["gps_id"];?>&move=SW">SW</a></td>
-	<td><a href="move_units.php?id=<?=$row["gps_id"];?>&move=W">W</a></td>
-	<td><a href="move_units.php?id=<?=$row["gps_id"];?>&move=NW">NW</a></td>
+	<td><a href="move_units.php?id=<?=$row["gps_id"];?>&move=N"><b>&#8593;</b></a></td>
+	<td><a href="move_units.php?id=<?=$row["gps_id"];?>&move=NE"><b>&#8599;</b></a></td>
+	<td><a href="move_units.php?id=<?=$row["gps_id"];?>&move=E"><b>&#8594;</b></a></td>
+	<td><a href="move_units.php?id=<?=$row["gps_id"];?>&move=SE"><b>&#8600;</b></a></td>
+	<td><a href="move_units.php?id=<?=$row["gps_id"];?>&move=S"><b>&#8595;</b></a></td>
+	<td><a href="move_units.php?id=<?=$row["gps_id"];?>&move=SW"><b>&#8601;</b></a></td>
+	<td><a href="move_units.php?id=<?=$row["gps_id"];?>&move=W"><b>&#8592;</b></a></td>
+	<td><a href="move_units.php?id=<?=$row["gps_id"];?>&move=NW"><b>&#8598;</b></a></td>
 <?php
 }
 ?>

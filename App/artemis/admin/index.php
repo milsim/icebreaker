@@ -2,6 +2,7 @@
 require_once("../db.php");
 ?>
 <h1>GPS</h1>
+[<a href="move_units.php">Manually move units</a>]
 [<a href="#">List current GPS positions</a>] 
 [<a href="#">List latest GPS positions for unit</a>] 
 [<a href="#">Reassign GPS ids</a>] 

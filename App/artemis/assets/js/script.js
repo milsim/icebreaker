@@ -87,7 +87,7 @@ $(document).ready(function() {
 
 	var notifyTimer = setInterval(function() {
 		check_notify();
-	}, notify_interval);
+	}, interval_timer);
 
 function check_notify() {
 		$.getJSON("check_notify.php", function(json) {

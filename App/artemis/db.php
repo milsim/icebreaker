@@ -1,5 +1,5 @@
 <?php
-require_once 'config.php';
+require_once 'db_config.php';
 
 mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
 mysql_select_db(DB_NAME);

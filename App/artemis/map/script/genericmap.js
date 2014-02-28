@@ -35,9 +35,9 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
  
 var defaultLocation = {
-	lat: 45.6405179, 
-	lon: 33.2519155,
-	zoom: 15
+	lat: 45.6402245, 
+	lon: 33.2541041,
+	zoom: 16
 };   
 
 function ICE(){
@@ -46,7 +46,7 @@ function ICE(){
 	MARCONI.stdlib.logObject = function(){}
 	$(document).ready(function(){
 		$("#cbMapType").val(MAPID_SATELLITE).trigger('change');
-		setTimeout(function(){ ib.scan() }, 5000);
+		setTimeout(function(){ ib.scan() }, 15000);
 		
 		if(ib.settings.f == "a" && ib.settings.v == "a" && ib.settings.t == "a")
 			setInterval(function(){ ib.pinpoint() }, 30000);

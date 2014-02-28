@@ -951,7 +951,7 @@ function onLoad(callback){
 
 
         m_map.zoomToExtent(extent, true);
-   		m_map.zoomTo(14);
+   		m_map.zoomTo(15);
 
         if( !m_ItemToEdit && genericMapInitialLatLong()) {
             m_ItemToEdit="POINT";

@@ -4,16 +4,16 @@
  */
 
 // MySQL database name
-define('DB_NAME', '');
+define('DB_NAME', 'icebreaker');
 
 // Mysql username
-define('DB_USER', '');
+define('DB_USER', 'root');
 
 // MySQL password
 define('DB_PASSWORD', '');
 
 // MySQL host
-define('DB_HOST', '');
+define('DB_HOST', 'localhost');
 
 // MySQL character encdoding
 define('DB_CHARSET', '');

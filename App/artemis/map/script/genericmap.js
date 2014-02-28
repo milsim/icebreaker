@@ -35,8 +35,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
  
 var defaultLocation = {
-	lat: 57.5593818, 
-	lon: 14.8685967
+	lat: 45.6405179, 
+	lon: 33.2519155
 };   
 
 function ICE(){

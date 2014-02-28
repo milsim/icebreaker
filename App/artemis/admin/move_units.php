@@ -100,9 +100,6 @@ $(window).load(function(){
 				.attr("href")
 				.replace("{id}", $(".unit").val())
 		).done(function(re){			
-		
-		console.log(re)
-		
 			a.removeClass("disabled");
 			$(".recent").html(re);
 		});

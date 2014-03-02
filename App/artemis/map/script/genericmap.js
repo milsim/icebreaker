@@ -46,7 +46,8 @@ function ICE(){
 	MARCONI.stdlib.logObject = function(){}
 	$(document).ready(function(){
 		$("#cbMapType").val(MAPID_SATELLITE).trigger('change');
-		setTimeout(function(){ ib.scan() }, 5000);
+		ib.scan();
+		setInterval(function(){ ib.pinpoint() }, 5000);
 		
 		if(ib.settings.f == "a" && ib.settings.v == "a" && ib.settings.t == "a")
 			setInterval(function(){ ib.pinpoint() }, 5000);

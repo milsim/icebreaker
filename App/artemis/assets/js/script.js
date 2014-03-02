@@ -83,7 +83,7 @@ $(document).ready(function() {
 		}
 		var t = year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second;
 		$("#curtime").html(t);
-	},10000);
+	},1000);
 
 	var notifyTimer = setInterval(function() {
 		check_notify();
